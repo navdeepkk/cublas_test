@@ -1,0 +1,177 @@
+forward matmul: m:1536, n:1024, k:1024
+Performance= 51.25 TFlop/s, Time= 0.063 msec, Size= 3221225472 Ops
+==PROF== Connected to process 4163
+==PROF== Profiling "generate_seed_pseudo" - 1: 0%....50%....100% - 1 pass
+==PROF== Profiling "gen_sequenced" - 2: 0%....50%....100% - 1 pass
+==PROF== Profiling "convertFp32ToFp16" - 3: 0%....50%....100% - 1 pass
+==PROF== Profiling "generate_seed_pseudo" - 4: 0%....50%....100% - 1 pass
+==PROF== Profiling "gen_sequenced" - 5: 0%....50%....100% - 1 pass
+==PROF== Profiling "convertFp32ToFp16" - 6: 0%....50%....100% - 1 pass
+==PROF== Profiling "volta_fp16_s884gemm_fp16_64x1..." - 7: 0%....50%....100%forward matmul: m:1536, n:1024, k:1024
+Performance= 0.03 TFlop/s, Time= 100.000 msec, Size= 3221225472 Ops
+ - 1 pass
+==PROF== Disconnected from process 4163
+[4163] a.out@127.0.0.1
+  generate_seed_pseudo, 2020-May-22 21:30:42, Context 1, Stream 7
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    sm__pipe_tensor_cycles_active.avg.pct_of_peak_sustained_active                       %                              0
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  gen_sequenced, 2020-May-22 21:30:42, Context 1, Stream 7
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    sm__pipe_tensor_cycles_active.avg.pct_of_peak_sustained_active                       %                              0
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  convertFp32ToFp16, 2020-May-22 21:30:42, Context 1, Stream 7
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    sm__pipe_tensor_cycles_active.avg.pct_of_peak_sustained_active                       %                              0
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  generate_seed_pseudo, 2020-May-22 21:30:42, Context 1, Stream 7
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    sm__pipe_tensor_cycles_active.avg.pct_of_peak_sustained_active                       %                              0
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  gen_sequenced, 2020-May-22 21:30:42, Context 1, Stream 7
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    sm__pipe_tensor_cycles_active.avg.pct_of_peak_sustained_active                       %                              0
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  convertFp32ToFp16, 2020-May-22 21:30:42, Context 1, Stream 7
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    sm__pipe_tensor_cycles_active.avg.pct_of_peak_sustained_active                       %                              0
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  volta_fp16_s884gemm_fp16_64x128_ldg8_f2f_tn, 2020-May-22 21:30:43, Context 1, Stream 7
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    sm__pipe_tensor_cycles_active.avg.pct_of_peak_sustained_active                       %                          49.74
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+forward matmul: m:1536, n:1024, k:1024
+Performance= 55.92 TFlop/s, Time= 0.058 msec, Size= 3221225472 Ops
+
+forward matmul: m:1536, n:4096, k:1024
+Performance= 72.50 TFlop/s, Time= 0.178 msec, Size= 12884901888 Ops
+==PROF== Connected to process 4346
+==PROF== Profiling "generate_seed_pseudo" - 1: 0%....50%....100% - 1 pass
+==PROF== Profiling "gen_sequenced" - 2: 0%....50%....100% - 1 pass
+==PROF== Profiling "convertFp32ToFp16" - 3: 0%....50%....100% - 1 pass
+==PROF== Profiling "generate_seed_pseudo" - 4: 0%....50%....100% - 1 pass
+==PROF== Profiling "gen_sequenced" - 5: 0%....50%....100% - 1 pass
+==PROF== Profiling "convertFp32ToFp16" - 6: 0%....50%....100% - 1 pass
+==PROF== Profiling "volta_fp16_s884gemm_fp16_128x..." - 7: 0%....50%....100%forward matmul: m:1536, n:4096, k:1024
+Performance= 0.13 TFlop/s, Time= 100.000 msec, Size= 12884901888 Ops
+ - 1 pass
+==PROF== Disconnected from process 4346
+[4346] a.out@127.0.0.1
+  generate_seed_pseudo, 2020-May-22 21:30:53, Context 1, Stream 7
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    sm__pipe_tensor_cycles_active.avg.pct_of_peak_sustained_active                       %                              0
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  gen_sequenced, 2020-May-22 21:30:53, Context 1, Stream 7
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    sm__pipe_tensor_cycles_active.avg.pct_of_peak_sustained_active                       %                              0
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  convertFp32ToFp16, 2020-May-22 21:30:54, Context 1, Stream 7
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    sm__pipe_tensor_cycles_active.avg.pct_of_peak_sustained_active                       %                              0
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  generate_seed_pseudo, 2020-May-22 21:30:54, Context 1, Stream 7
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    sm__pipe_tensor_cycles_active.avg.pct_of_peak_sustained_active                       %                              0
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  gen_sequenced, 2020-May-22 21:30:54, Context 1, Stream 7
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    sm__pipe_tensor_cycles_active.avg.pct_of_peak_sustained_active                       %                              0
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  convertFp32ToFp16, 2020-May-22 21:30:54, Context 1, Stream 7
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    sm__pipe_tensor_cycles_active.avg.pct_of_peak_sustained_active                       %                              0
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  volta_fp16_s884gemm_fp16_128x128_ldg8_f2f_tn, 2020-May-22 21:30:55, Context 1, Stream 7
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    sm__pipe_tensor_cycles_active.avg.pct_of_peak_sustained_active                       %                          67.85
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+forward matmul: m:1536, n:4096, k:1024
+Performance= 73.00 TFlop/s, Time= 0.177 msec, Size= 12884901888 Ops
+
+forward matmul: m:1536, n:1024, k:4096
+Performance= 70.72 TFlop/s, Time= 0.182 msec, Size= 12884901888 Ops
+==PROF== Connected to process 4534
+==PROF== Profiling "generate_seed_pseudo" - 1: 0%....50%....100% - 1 pass
+==PROF== Profiling "gen_sequenced" - 2: 0%....50%....100% - 1 pass
+==PROF== Profiling "convertFp32ToFp16" - 3: 0%....50%....100% - 1 pass
+==PROF== Profiling "generate_seed_pseudo" - 4: 0%....50%....100% - 1 pass
+==PROF== Profiling "gen_sequenced" - 5: 0%....50%....100% - 1 pass
+==PROF== Profiling "convertFp32ToFp16" - 6: 0%....50%....100% - 1 pass
+==PROF== Profiling "volta_fp16_s884gemm_fp16_64x1..." - 7: 0%....50%....100%forward matmul: m:1536, n:1024, k:1024
+Performance= 0.03 TFlop/s, Time= 100.000 msec, Size= 3221225472 Ops
+ - 1 pass
+==PROF== Disconnected from process 4534
+[4534] a.out@127.0.0.1
+  generate_seed_pseudo, 2020-May-22 21:31:06, Context 1, Stream 7
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    sm__pipe_tensor_cycles_active.avg.pct_of_peak_sustained_active                       %                              0
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  gen_sequenced, 2020-May-22 21:31:06, Context 1, Stream 7
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    sm__pipe_tensor_cycles_active.avg.pct_of_peak_sustained_active                       %                              0
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  convertFp32ToFp16, 2020-May-22 21:31:06, Context 1, Stream 7
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    sm__pipe_tensor_cycles_active.avg.pct_of_peak_sustained_active                       %                              0
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  generate_seed_pseudo, 2020-May-22 21:31:07, Context 1, Stream 7
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    sm__pipe_tensor_cycles_active.avg.pct_of_peak_sustained_active                       %                              0
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  gen_sequenced, 2020-May-22 21:31:07, Context 1, Stream 7
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    sm__pipe_tensor_cycles_active.avg.pct_of_peak_sustained_active                       %                              0
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  convertFp32ToFp16, 2020-May-22 21:31:07, Context 1, Stream 7
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    sm__pipe_tensor_cycles_active.avg.pct_of_peak_sustained_active                       %                              0
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  volta_fp16_s884gemm_fp16_64x128_ldg8_f2f_tn, 2020-May-22 21:31:08, Context 1, Stream 7
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    sm__pipe_tensor_cycles_active.avg.pct_of_peak_sustained_active                       %                          49.85
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+forward matmul: m:1536, n:1024, k:4096
+Performance= 77.09 TFlop/s, Time= 0.167 msec, Size= 12884901888 Ops
+
