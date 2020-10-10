@@ -1,4 +1,4 @@
-// RUN: nvcc -O3 -std=c++11 -use_fast_math -ccbin g++ -arch=compute_75 -code=sm_75 -expt-relaxed-constexpr
+// RUN: nvcc -lcurand -lcublas -O3 -std=c++11 -use_fast_math -ccbin g++ -arch=compute_75 -code=sm_75 -expt-relaxed-constexpr
 #include <iostream>
 #include <cuda_runtime.h>
 #include <cuda_device_runtime_api.h>
@@ -96,12 +96,12 @@ void gpu_blas_mmul(__half *A, __half *B, __half *C, int m, int k, int n, int ite
   float matmulTime = 0.0f;	
 
   //-------------------------------peforming warmup runs-------------------------------------//
-  for(int i = 0; i < 5; i++){
+  for(int i = 0; i < 1; i++){
     // Do the actual multiplication
     check_cuda_error(cublasGemmEx(handle, CUBLAS_OP_T, CUBLAS_OP_N, 
 	  /*number of rows of matrix op(A) and C*/n,
 	  /*number of columns of matrix op(B) and C*/m,
-	  /*number of columns of op(A) and rows of op(B)*/k, alpha, B, CUDA_R_16F, ldb, A, CUDA_R_16F, lda, beta, C, CUDA_R_16F, ldc, CUBLAS_COMPUTE_32F, CUBLAS_GEMM_DEFAULT_TENSOR_OP));
+	  /*number of columns of op(A) and rows of op(B)*/k, alpha, B, CUDA_R_16F, ldb, A, CUDA_R_16F, lda, beta, C, CUDA_R_16F, ldc, CUDA_R_32F, CUBLAS_GEMM_DEFAULT_TENSOR_OP));
   }
 
   //-------------------------------------perform actual runs--------------------------------//
@@ -117,7 +117,7 @@ void gpu_blas_mmul(__half *A, __half *B, __half *C, int m, int k, int n, int ite
     check_cuda_error(cublasGemmEx(handle, CUBLAS_OP_T, CUBLAS_OP_N, 
 	  /*number of rows of matrix op(A) and C*/n,
 	  /*number of columns of matrix op(B) and C*/m,
-	  /*number of columns of op(A) and rows of op(B)*/k, alpha, B, CUDA_R_16F, ldb, A, CUDA_R_16F, lda, beta, C, CUDA_R_16F, ldc, CUBLAS_COMPUTE_32F, CUBLAS_GEMM_DEFAULT_TENSOR_OP));
+	  /*number of columns of op(A) and rows of op(B)*/k, alpha, B, CUDA_R_16F, ldb, A, CUDA_R_16F, lda, beta, C, CUDA_R_16F, ldc, CUDA_R_32F, CUBLAS_GEMM_DEFAULT_TENSOR_OP));
     cudaEventRecord(stop, NULL);
 
     //stop event to complete
@@ -132,7 +132,7 @@ void gpu_blas_mmul(__half *A, __half *B, __half *C, int m, int k, int n, int ite
 
   double flopsPerMatrixMul = 2.0 * (double) m * (double) n * (double) k;
   //double teraFlops = (flopsPerMatrixMul * 1.0e-12f) / (matmulTime / niter / 1000.0f);
-  double teraFlops = (flopsPerMatrixMul * 1.0e-12f) / (mintime / 1000.0f);
+  double teraFlops = (flopsPerMatrixMul * 1.0e-12f) / (matmulTime / niter / 1000.0f);
   std::cout<<m<<", "<<n<<", "<<k<<", "<<teraFlops<<" FLOPs: "<<flopsPerMatrixMul<<std::endl;
   
   // Destroy the handle
